@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.35c41def.chunk.css",
-    "main.js": "/portfolio/static/js/main.4129c454.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.4129c454.chunk.js.map",
+    "main.js": "/portfolio/static/js/main.271c865e.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.271c865e.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.5cd19545.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.5cd19545.js.map",
     "static/js/2.40040996.chunk.js": "/portfolio/static/js/2.40040996.chunk.js",
@@ -19,6 +19,8 @@
     "static/media/data.bc341e4c.png": "/portfolio/static/media/data.bc341e4c.png",
     "static/media/doge.103af9f2.png": "/portfolio/static/media/doge.103af9f2.png",
     "static/media/jplus.ee82cdec.png": "/portfolio/static/media/jplus.ee82cdec.png",
+    "static/media/kmitk.b453278c.png": "/portfolio/static/media/kmitk.b453278c.png",
+    "static/media/nft.fa91fa87.png": "/portfolio/static/media/nft.fa91fa87.png",
     "static/media/surveyu.c2470b17.png": "/portfolio/static/media/surveyu.c2470b17.png",
     "static/media/tour.2c66a4c4.png": "/portfolio/static/media/tour.2c66a4c4.png"
   },
@@ -26,6 +28,6 @@
     "static/js/runtime-main.5cd19545.js",
     "static/js/2.40040996.chunk.js",
     "static/css/main.35c41def.chunk.css",
-    "static/js/main.4129c454.chunk.js"
+    "static/js/main.271c865e.chunk.js"
   ]
 }

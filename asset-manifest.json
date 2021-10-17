@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.35c41def.chunk.css",
-    "main.js": "/portfolio/static/js/main.271c865e.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.271c865e.chunk.js.map",
+    "main.js": "/portfolio/static/js/main.38403935.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.38403935.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.5cd19545.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.5cd19545.js.map",
     "static/js/2.40040996.chunk.js": "/portfolio/static/js/2.40040996.chunk.js",
@@ -16,6 +16,7 @@
     "static/media/backgroundVideo.15971e94.mp4": "/portfolio/static/media/backgroundVideo.15971e94.mp4",
     "static/media/cfu.3cfbfdcd.jpg": "/portfolio/static/media/cfu.3cfbfdcd.jpg",
     "static/media/cryptcon.9f82eb3e.png": "/portfolio/static/media/cryptcon.9f82eb3e.png",
+    "static/media/darcy.b93dd493.png": "/portfolio/static/media/darcy.b93dd493.png",
     "static/media/data.bc341e4c.png": "/portfolio/static/media/data.bc341e4c.png",
     "static/media/doge.103af9f2.png": "/portfolio/static/media/doge.103af9f2.png",
     "static/media/jplus.ee82cdec.png": "/portfolio/static/media/jplus.ee82cdec.png",
@@ -28,6 +29,6 @@
     "static/js/runtime-main.5cd19545.js",
     "static/js/2.40040996.chunk.js",
     "static/css/main.35c41def.chunk.css",
-    "static/js/main.271c865e.chunk.js"
+    "static/js/main.38403935.chunk.js"
   ]
 }

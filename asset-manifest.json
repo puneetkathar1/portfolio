@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.35c41def.chunk.css",
-    "main.js": "/portfolio/static/js/main.38403935.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.38403935.chunk.js.map",
+    "main.js": "/portfolio/static/js/main.bfcd480b.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.bfcd480b.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.5cd19545.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.5cd19545.js.map",
-    "static/js/2.40040996.chunk.js": "/portfolio/static/js/2.40040996.chunk.js",
-    "static/js/2.40040996.chunk.js.map": "/portfolio/static/js/2.40040996.chunk.js.map",
+    "static/js/2.d65021f0.chunk.js": "/portfolio/static/js/2.d65021f0.chunk.js",
+    "static/js/2.d65021f0.chunk.js.map": "/portfolio/static/js/2.d65021f0.chunk.js.map",
     "static/js/3.de51c8da.chunk.js": "/portfolio/static/js/3.de51c8da.chunk.js",
     "static/js/3.de51c8da.chunk.js.map": "/portfolio/static/js/3.de51c8da.chunk.js.map",
     "index.html": "/portfolio/index.html",
     "static/css/main.35c41def.chunk.css.map": "/portfolio/static/css/main.35c41def.chunk.css.map",
-    "static/js/2.40040996.chunk.js.LICENSE.txt": "/portfolio/static/js/2.40040996.chunk.js.LICENSE.txt",
+    "static/js/2.d65021f0.chunk.js.LICENSE.txt": "/portfolio/static/js/2.d65021f0.chunk.js.LICENSE.txt",
     "static/media/avatar.1b3d363d.jpg": "/portfolio/static/media/avatar.1b3d363d.jpg",
     "static/media/backgroundVideo.15971e94.mp4": "/portfolio/static/media/backgroundVideo.15971e94.mp4",
     "static/media/cfu.3cfbfdcd.jpg": "/portfolio/static/media/cfu.3cfbfdcd.jpg",
@@ -19,6 +19,7 @@
     "static/media/darcy.b93dd493.png": "/portfolio/static/media/darcy.b93dd493.png",
     "static/media/data.bc341e4c.png": "/portfolio/static/media/data.bc341e4c.png",
     "static/media/doge.103af9f2.png": "/portfolio/static/media/doge.103af9f2.png",
+    "static/media/fiverr.b5eec55b.png": "/portfolio/static/media/fiverr.b5eec55b.png",
     "static/media/jplus.ee82cdec.png": "/portfolio/static/media/jplus.ee82cdec.png",
     "static/media/kmitk.b453278c.png": "/portfolio/static/media/kmitk.b453278c.png",
     "static/media/nft.fa91fa87.png": "/portfolio/static/media/nft.fa91fa87.png",
@@ -27,8 +28,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.5cd19545.js",
-    "static/js/2.40040996.chunk.js",
+    "static/js/2.d65021f0.chunk.js",
     "static/css/main.35c41def.chunk.css",
-    "static/js/main.38403935.chunk.js"
+    "static/js/main.bfcd480b.chunk.js"
   ]
 }

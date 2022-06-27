@@ -7,6 +7,7 @@ module.exports = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  target: 'serverless'
 }
 
 module.exports = withPWA({

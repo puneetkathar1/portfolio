@@ -7,7 +7,6 @@ module.exports = {
     locales: ["en"],
     defaultLocale: "en",
   },
-  distDir: 'build'
 }
 
 module.exports = withPWA({

@@ -12,7 +12,6 @@ function MyApp({ Component, pageProps }) {
           name="description"
           content="Hire the Best Website Developer as a Freelancer. This is the portfolio of Puneet Kathar showing his previous work and a career as a Web Dev freelance."
         />
-        <meta name="google-site-verification" content="hDw0Jswy0SXHWhteY3mFAdx8l9qBvONf-BINPfQ9XA0" />
       </Head>
       <Component {...pageProps} />
     </>

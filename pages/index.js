@@ -1377,7 +1377,7 @@ import { SocialIcon } from "react-social-icons";
                 <span className="subtitle">My Latest Reviews</span>
                 <h2 className="title">Testimonial&#39;s</h2>
                 <p>
-                  Let&#39;s see what my clients want to mention <br /> about me.
+                  Let&#39;s see what my clients want to mention.
                 </p>
               </div>
             </div>

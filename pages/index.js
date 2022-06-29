@@ -14,13 +14,13 @@ import MuiAlert from "@material-ui/lab/Alert";
 import Snackbar from "@material-ui/core/Snackbar";
 import Typewriter from "typewriter-effect";
 import { SocialIcon } from "react-social-icons";
-
-export default function Home() {
+ export default function Home() {
   function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
   }
 
   const [show, setShow] = React.useState("1");
+  const [testimonial, setTestimonial] = React.useState("1");
   const [menu, setMenu] = React.useState(false);
 
   const [values, setValues] = React.useState({
@@ -531,9 +531,9 @@ export default function Home() {
                       <span className="subtitle">My About Details</span>
                       <h2 className="title">About Me</h2>
                       <p className="description mt_dec--20">
-                        I am a Fullstack Web Developer and computer science
-                        enthusiast. I work on MERN stack. I love to code and
-                        create something special.
+                        I am a Fullstack Web Developer and a Nature lover. I
+                        work on MERN stack. I love to code and create something
+                        special.
                       </p>
                     </div>
                     <div className="row mt--30">
@@ -1027,7 +1027,37 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* End Sewrvices Area */}
+      {/* End Services Area */}
+      {/* Rn Brand Area Start */}
+      {/* <div className="rn-brand-area pb--120 bg_color--5">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="section-title text-center mb--25 mb_sm--0">
+                <span className="subtitle">What is my expertise</span>
+                <h2 className="title">Tech Stacks</h2>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-lg-10 offset-lg-1 mt--30">
+              <div className="thumbnail position-relative">
+                <img
+                  className="w-100"
+                  src="assets/images/about/about-10.png"
+                  alt="About Images"
+                />
+                <a
+                  className="play__btn video-popup position-top-center theme-color"
+                >
+                  <span className="play-icon"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> */}
+      {/* Rn Brand Area End */}
       {/* Start portfolio Area */}
       <div id="portfolio" className="fix">
         <div className="portfolio-area pb--120 bg_color--5">
@@ -1338,6 +1368,406 @@ export default function Home() {
         </div>
       </div>
       {/* End portfolio Area */}
+      {/* Start testiomonial Area */}
+      <div className="rn-testimonial-area pb--120 bg_color--5" id="testimonial">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="section-title text-center mb--30 mb_sm--0">
+                <span className="subtitle">My Latest Reviews</span>
+                <h2 className="title">Testimonial&#39;s</h2>
+                <p>
+                  Let&#39;s see what my clients want to mention <br /> about me.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="row align-items-center">
+            <div className="col-lg-6">
+              <div
+                className="rn-testimonial-content tab-content"
+                id="myTabContent"
+              >
+                <div
+                  className={
+                    testimonial == "1"
+                      ? "tab-pane fade show active"
+                      : "tab-pane fade"
+                  }
+                  id="tab1"
+                  role="tabpanel"
+                  aria-labelledby="tab1-tab"
+                >
+                  <div className="inner">
+                    <p>
+                      The work was excellent. I am happy to work with this
+                      seller. Gladly again at any time. Always responds
+                      immediately. Changes are implemented at any time as
+                      requested. We have previously discussed everything in what
+                      scope should be worked and then I received an individual
+                      offer. Simply top!
+                    </p>
+                  </div>
+                  <div className="author-info">
+                    <h6>
+                      <span>Florian Wilde</span>
+                    </h6>
+                  </div>
+                </div>
+
+                <div
+                  className={
+                    testimonial == "2"
+                      ? "tab-pane fade show active"
+                      : "tab-pane fade"
+                  }
+                  id="tab2"
+                  role="tabpanel"
+                  aria-labelledby="tab2-tab"
+                >
+                  <div className="inner">
+                    <p>
+                      Have you ever wanted to find the PERFECT solution for a
+                      problem that was draining a lot of your time? Well,
+                      that&#39;s exactly what you will find with Puneet. He did
+                      EXACTLY what I needed with minimal instructions from my
+                      side. And the end result was AMAZING. I will definitely
+                      work with him again and again and would advise you to hire
+                      him before he is super busy.
+                    </p>
+                  </div>
+                  <div className="author-info">
+                    <h6>
+                      <span>Cristian Pirlea</span>
+                    </h6>
+                  </div>
+                </div>
+
+                <div
+                  className={
+                    testimonial == "3"
+                      ? "tab-pane fade show active"
+                      : "tab-pane fade"
+                  }
+                  id="tab3"
+                  role="tabpanel"
+                  aria-labelledby="tab3-tab"
+                >
+                  <div className="inner">
+                    <p>
+                      I found this guy and placed an order. He really impressed
+                      me and has done the job too soon. Will love to work again.
+                      Highly recommended! Such a great seller, no doubt!!. Was
+                      very efficient, gave quick delivery, excellent
+                      communication.
+                    </p>
+                  </div>
+                  <div className="author-info">
+                    <h6>
+                      <span>Jadesola Osinowo</span>
+                    </h6>
+                  </div>
+                </div>
+
+                <div
+                  className={
+                    testimonial == "4"
+                      ? "tab-pane fade show active"
+                      : "tab-pane fade"
+                  }
+                  id="tab4"
+                  role="tabpanel"
+                  aria-labelledby="tab4-tab"
+                >
+                  <div className="inner">
+                    <p>
+                      Delivering on visions. Great experience taking my
+                      requirements and delivering on the expectations.
+                      Responsive and delivers on the commitments. Easy to work
+                      with. Well done. Great to work with you.
+                    </p>
+                  </div>
+                  <div className="author-info">
+                    <h6>
+                      <span>Sean M. Walsh</span>
+                    </h6>
+                  </div>
+                </div>
+
+                <div
+                  className={
+                    testimonial == "5"
+                      ? "tab-pane fade show active"
+                      : "tab-pane fade"
+                  }
+                  id="tab5"
+                  role="tabpanel"
+                  aria-labelledby="tab5-tab"
+                >
+                  <div className="inner">
+                    <p>
+                      Puneet is a very talented developer. It has been my
+                      pleasure working with him and he has been doing so great.
+                      He responds quickly and deliver the work perfectly!
+                    </p>
+                  </div>
+                  <div className="author-info">
+                    <h6>
+                      <span>Name Suck</span>
+                    </h6>
+                  </div>
+                </div>
+
+                <div
+                  className={
+                    testimonial == "6"
+                      ? "tab-pane fade show active"
+                      : "tab-pane fade"
+                  }
+                  id="tab6"
+                  role="tabpanel"
+                  aria-labelledby="tab6-tab"
+                >
+                  <div className="inner">
+                    <p>
+                      It was great! Very knowledgeable and on time. I am really
+                      impressed by the results. We went back and forth many
+                      times to make sure the website looked exactly how I
+                      wanted. Great service and great results.
+                    </p>
+                  </div>
+                  <div className="author-info">
+                    <h6>
+                      <span>Shivkumar Bale</span>
+                    </h6>
+                  </div>
+                </div>
+
+                <div
+                  className={
+                    testimonial == "7"
+                      ? "tab-pane fade show active"
+                      : "tab-pane fade"
+                  }
+                  id="tab7"
+                  role="tabpanel"
+                  aria-labelledby="tab7-tab"
+                >
+                  <div className="inner">
+                    <p>
+                      It was my second order with thus guy, he really did a
+                      wonderful job in creating the website especially Admin
+                      Management Console. Loved It! Highly Recommended.
+                      Delivered quickly and professionally!
+                    </p>
+                  </div>
+                  <div className="author-info">
+                    <h6>
+                      <span>Darcy Muller </span>
+                    </h6>
+                  </div>
+                </div>
+
+                <div
+                  className={
+                    testimonial == "8"
+                      ? "tab-pane fade show active"
+                      : "tab-pane fade"
+                  }
+                  id="tab8"
+                  role="tabpanel"
+                  aria-labelledby="tab8-tab"
+                >
+                  <div className="inner">
+                    <p>
+                      Great person to work with. Responds quickly and we’ll
+                      experienced. Could not be happier with the service.
+                    </p>
+                  </div>
+                  <div className="author-info">
+                    <h6>
+                      <span>Joey B.</span>
+                    </h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-lg-6 mt_md--40 mt_sm--40">
+              <ul
+                className="testimonial-thumb-wrapper nav nav-tabs"
+                id="myTab"
+                role="tablist"
+              >
+                <li>
+                  <a
+                    className={testimonial == "1" ? "active" : ""}
+                    id="tab1-tab"
+                    data-bs-toggle="tab"
+                    role="tab"
+                    aria-controls="tab1"
+                    aria-selected="true"
+                    onClick={() => setTestimonial("1")}
+                  >
+                    <div className="testimonial-thumbnai">
+                      <div className="thumb">
+                        <img
+                          src="assets/images/client/testimonial-1.jpg"
+                          alt="Testimonial Images"
+                        />
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className={testimonial == "2" ? "active" : ""}
+                    id="tab2-tab"
+                    data-bs-toggle="tab"
+                    role="tab"
+                    aria-controls="tab2"
+                    aria-selected="false"
+                    onClick={() => setTestimonial("2")}
+                  >
+                    <div className="testimonial-thumbnai">
+                      <div className="thumb">
+                        <img
+                          src="assets/images/client/testimonial-2.jpg"
+                          alt="Testimonial Images"
+                        />
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className={testimonial == "3" ? "active" : ""}
+                    id="tab3-tab"
+                    data-bs-toggle="tab"
+                    role="tab"
+                    aria-controls="tab3"
+                    aria-selected="false"
+                    onClick={() => setTestimonial("3")}
+                  >
+                    <div className="testimonial-thumbnai">
+                      <div className="thumb">
+                        <img
+                          src="assets/images/client/testimonial-3.jpg"
+                          alt="Testimonial Images"
+                        />
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className={testimonial == "4" ? "active" : ""}
+                    id="tab4-tab"
+                    data-bs-toggle="tab"
+                    onClick={() => setTestimonial("4")}
+                    role="tab"
+                    aria-controls="tab4"
+                    aria-selected="false"
+                  >
+                    <div className="testimonial-thumbnai">
+                      <div className="thumb">
+                        <img
+                          src="assets/images/client/testimonial-4.jpg"
+                          alt="Testimonial Images"
+                        />
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    className={testimonial == "5" ? "active" : ""}
+                    id="tab5-tab"
+                    data-bs-toggle="tab"
+                    onClick={() => setTestimonial("5")}
+                    role="tab"
+                    aria-controls="tab5"
+                    aria-selected="false"
+                  >
+                    <div className="testimonial-thumbnai">
+                      <div className="thumb">
+                        <img
+                          src="assets/images/client/testimonial-5.jpg"
+                          alt="Testimonial Images"
+                        />
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    className={testimonial == "6" ? "active" : ""}
+                    id="tab6-tab"
+                    data-bs-toggle="tab"
+                    onClick={() => setTestimonial("6")}
+                    role="tab"
+                    aria-controls="tab6"
+                    aria-selected="false"
+                  >
+                    <div className="testimonial-thumbnai">
+                      <div className="thumb">
+                        <img
+                          src="assets/images/client/testimonial-6.jpg"
+                          alt="Testimonial Images"
+                        />
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    className={testimonial == "7" ? "active" : ""}
+                    id="tab7-tab"
+                    data-bs-toggle="tab"
+                    onClick={() => setTestimonial("7")}
+                    role="tab"
+                    aria-controls="tab7"
+                    aria-selected="false"
+                  >
+                    <div className="testimonial-thumbnai">
+                      <div className="thumb">
+                        <img
+                          src="assets/images/client/testimonial-7.jpg"
+                          alt="Testimonial Images"
+                        />
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    className={testimonial == "8" ? "active" : ""}
+                    id="tab8-tab"
+                    data-bs-toggle="tab"
+                    onClick={() => setTestimonial("8")}
+                    role="tab"
+                    aria-controls="tab8"
+                    aria-selected="false"
+                  >
+                    <div className="testimonial-thumbnai">
+                      <div className="thumb">
+                        <img
+                          src="assets/images/client/testimonial-8.jpg"
+                          alt="Testimonial Images"
+                        />
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
       {/* Start Pricing Area */}
       <div id="pricing" className="rn-pricing-table-area pb--120 bg_color--5">
         <div className="container">
@@ -1792,6 +2222,7 @@ export default function Home() {
       {/* jquery JS */}
       {/* Bootstrap JS */}
       {/* main JS */}
+
       <Snackbar open={open2} autoHideDuration={6000} onClose={handleClose2}>
         <Alert onClose={handleClose2} severity="error">
           Error!

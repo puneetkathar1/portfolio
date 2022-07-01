@@ -14,7 +14,7 @@ import MuiAlert from "@material-ui/lab/Alert";
 import Snackbar from "@material-ui/core/Snackbar";
 import Typewriter from "typewriter-effect";
 import { SocialIcon } from "react-social-icons";
- export default function Home() {
+export default function Home() {
   function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
   }
@@ -1266,14 +1266,12 @@ import { SocialIcon } from "react-social-icons";
       {/* Start testiomonial Area */}
       <div className="rn-testimonial-area pb--120 bg_color--5" id="testimonial">
         <div className="container">
-          <div className="row">
+          <div style={{ marginBottom: "2rem" }} className="row">
             <div className="col-lg-12">
               <div className="section-title text-center mb--30 mb_sm--0">
                 <span className="subtitle">My Latest Reviews</span>
                 <h2 className="title">Testimonial&#39;s</h2>
-                <p>
-                  Let&#39;s see what my clients want to mention.
-                </p>
+                <p>Let&#39;s see what my clients want to mention.</p>
               </div>
             </div>
           </div>

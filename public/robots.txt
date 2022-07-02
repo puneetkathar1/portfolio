@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://puneetkathar.com
+Host: https://www.puneetkathar.com
 
 # Sitemaps
-Sitemap: https://puneetkathar.com/sitemap.xml
+Sitemap: https://www.puneetkathar.com/sitemap.xml

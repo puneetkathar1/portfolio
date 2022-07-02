@@ -177,6 +177,13 @@ export default function Home() {
                   </Link>
                 </li>
                 <li className="nav-item">
+                  <Link href="#testimonial">
+                    <a className="nav-link smoth-animation" href="#testimonial">
+                      Testimonials
+                    </a>
+                  </Link>
+                </li>
+                <li className="nav-item">
                   <Link href="#pricing">
                     <a className="nav-link smoth-animation" href="#pricing">
                       Pricing
@@ -337,6 +344,17 @@ export default function Home() {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link href="#testimonial">
+                  <a
+                    onClick={() => setMenu(false)}
+                    className="nav-link smoth-animation"
+                    href="#testimonial"
+                  >
+                    Testimonials
+                  </a>
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link href="#pricing">
                   <a
                     onClick={() => setMenu(false)}
@@ -411,11 +429,20 @@ export default function Home() {
           <div className="about-wrapper">
             <div className="container">
               <div className="row row--35">
-                <div className="col-lg-5">
+                <div
+                  style={{
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                    justifyContent: "center",
+                    flexDirection: "row",
+                    display: "flex",
+                  }}
+                  className="col-lg-5"
+                >
                   <div className="thumbnail">
                     <img
                       className="w-100"
-                      src="/assets/images/about/about-7.jpg"
+                      src="/assets/images/about/about-7.svg"
                       alt="Fullstack web developer Puneet Kathar"
                     />
                   </div>
@@ -426,9 +453,13 @@ export default function Home() {
                       <span className="subtitle">My About Details</span>
                       <h2 className="title">About Me</h2>
                       <p className="description mt_dec--20">
-                        I am a Fullstack Web Developer and a Nature lover. I
-                        work on MERN stack. I love to code and create something
-                        special.
+                        Self-driven and motivated Freelancer adept at testing
+                        software products, developing and implementing new
+                        software platforms, and providing IT support and
+                        assistance to clients. Possessing great analytical
+                        skills, problem solving mindset, ability to work in team
+                        environments, strong attention to detail and a positive
+                        attitude.
                       </p>
                     </div>
                     <div className="row mt--30">
@@ -531,13 +562,13 @@ export default function Home() {
                                                 className="progress-bar wow fadeInLeft"
                                                 data-wow-duration="0.5s"
                                                 data-wow-delay=".3s"
-                                                aria-valuenow={95}
+                                                aria-valuenow={98}
                                                 aria-valuemin={0}
                                                 aria-valuemax={100}
-                                                style={{ width: "95%" }}
+                                                style={{ width: "100%" }}
                                               />
                                             </div>
-                                            <span className="label">95%</span>
+                                            <span className="label">100%</span>
                                           </div>
                                           <div className="single-progress">
                                             <h6 className="title">
@@ -552,10 +583,10 @@ export default function Home() {
                                                 aria-valuenow={98}
                                                 aria-valuemin={0}
                                                 aria-valuemax={100}
-                                                style={{ width: "98%" }}
+                                                style={{ width: "100%" }}
                                               />
                                             </div>
-                                            <span className="label">98%</span>
+                                            <span className="label">100%</span>
                                           </div>
                                           <div className="single-progress">
                                             <h6 className="title">
@@ -567,13 +598,13 @@ export default function Home() {
                                                 className="progress-bar wow fadeInLeft"
                                                 data-wow-duration="0.7s"
                                                 data-wow-delay=".5s"
-                                                aria-valuenow={90}
+                                                aria-valuenow={98}
                                                 aria-valuemin={0}
                                                 aria-valuemax={100}
-                                                style={{ width: "90%" }}
+                                                style={{ width: "100%" }}
                                               />
                                             </div>
-                                            <span className="label">90%</span>
+                                            <span className="label">100%</span>
                                           </div>
                                           <div className="single-progress">
                                             <h6 className="title">
@@ -585,13 +616,13 @@ export default function Home() {
                                                 className="progress-bar wow fadeInLeft"
                                                 data-wow-duration="0.8s"
                                                 data-wow-delay=".6s"
-                                                aria-valuenow={85}
+                                                aria-valuenow={98}
                                                 aria-valuemin={0}
                                                 aria-valuemax={100}
-                                                style={{ width: "85%" }}
+                                                style={{ width: "100%" }}
                                               />
                                             </div>
-                                            <span className="label">85%</span>
+                                            <span className="label">100%</span>
                                           </div>
                                         </div>
                                       </div>
@@ -610,21 +641,21 @@ export default function Home() {
                                         <ul>
                                           <li>
                                             <Link href="https://www.coursera.org/verify/M9RWJBZKB954">
-                                              <>
+                                              <a>
                                                 Build a MERN application using
                                                 NextJS
-                                                <span> - Coursera</span>
-                                              </>
+                                              </a>
                                             </Link>{" "}
+                                            <span>Coursera</span>
                                           </li>
                                           <li>
                                             <Link href="https://www.udemy.com/certificate/UC-ab8b39ad-407a-4bf7-a236-539cd8e79318/">
-                                              <>
+                                              <a>
                                                 The Complete 2022 Web
                                                 Development Bootcamp
-                                                <span> - Udemy</span>
-                                              </>
+                                              </a>
                                             </Link>{" "}
+                                            <span> Udemy</span>
                                           </li>
                                         </ul>
                                       </div>
@@ -642,8 +673,9 @@ export default function Home() {
                                       <div className="single-tab-content">
                                         <ul>
                                           <li>
-                                            Fullstack Web Developer
-                                            <span> - Freelancer</span>
+                                            <a>
+                                              Freelance Fullstack Web Developer
+                                            </a>
                                             2021 - Current
                                           </li>
                                         </ul>
@@ -667,7 +699,7 @@ export default function Home() {
                                               <span>
                                                 {" "}
                                                 - Jabalpur Engineering College,
-                                                Madhya Pradesh, IN
+                                                IN
                                               </span>
                                             </a>{" "}
                                             2020 - 2024
@@ -2042,7 +2074,7 @@ export default function Home() {
                 <div className="col-lg-6 order-1 order-lg-2">
                   <div className="thumbnail mb_md--30 mb_sm--30">
                     <img
-                      src="/assets/images/about/about-11.jpg"
+                      src="/assets/images/about/hehesvg.svg"
                       alt="Website development"
                     />
                   </div>
@@ -2053,7 +2085,10 @@ export default function Home() {
         </div>
       </div>
       {/* End Contact Area */}
-      <div className="footer-style-2 ptb--30 bg_color--6">
+      <div
+        style={{ backgroundColor: "#081217" }}
+        className="footer-style-2 ptb--30 bg_color--6"
+      >
         <div className="wrapper plr--50 plr_sm--20">
           <div className="row align-items-center justify-content-between">
             <div className="col-lg-4 col-md-6 col-sm-6 col-12">
@@ -2073,14 +2108,26 @@ export default function Home() {
                 <ul className="social-share rn-lg-size d-flex justify-content-center liststyle">
                   <li>
                     <SocialIcon
-                      url="https://www.linkedin.com/in/puneetkathar1/"
                       fgColor="#fff"
+                      url="https://www.instagram.com/puneetkathar1/"
                     />
                   </li>
                   <li>
                     <SocialIcon
-                      url="https://twitter.com/puneetkathar1"
                       fgColor="#fff"
+                      url="https://www.linkedin.com/in/puneetkathar1/"
+                    />
+                  </li>
+                  <li>
+                    <SocialIcon
+                      fgColor="#fff"
+                      url="https://www.facebook.com/profile.php?id=100006108909411"
+                    />
+                  </li>
+                  <li>
+                    <SocialIcon
+                      fgColor="#fff"
+                      url="https://twitter.com/puneetkathar1"
                     />
                   </li>
                 </ul>

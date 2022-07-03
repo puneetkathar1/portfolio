@@ -97,7 +97,7 @@ export default function Home() {
     //   email: values.email,
     //   message: values.message,
     // });
-    const result = await fetch(`http://localhost:3000/api/email`, {
+    const result = await fetch(`https://puneetkathar.com/api/email`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -117,7 +117,7 @@ export default function Home() {
 
   const newsLetter = async (e) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/newsletter`, {
+      const res = await fetch(`https://puneetkathar.com/api/newsletter`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -158,7 +158,7 @@ export default function Home() {
   };
   const handleClose = () => {
     setOpen(false);
-    setLoading(false)
+    setLoading(false);
   };
 
   const videoEnd = () => {
@@ -832,7 +832,7 @@ export default function Home() {
             <div className="row">
               <div className="col-lg-10 offset-lg-1 mt--30">
                 <div className="thumbnail position-relative">
-                  <YouTube videoId="ZOoVOfieAF8" opts={opts} onEnd={videoEnd} />
+                  <YouTube videoId="rgQJAO69n0E" opts={opts} onEnd={videoEnd} />
                 </div>
               </div>
             </div>

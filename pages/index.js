@@ -16,7 +16,7 @@ import Typewriter from "typewriter-effect";
 import { SocialIcon } from "react-social-icons";
 import YouTube from "react-youtube";
 import TextField from "@material-ui/core/TextField";
-
+import Cookies from "js-cookie";
 export default function Home() {
   function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -69,7 +69,7 @@ export default function Home() {
 
   const formValidate2 = (e) => {
     if (values.email.includes("@") && values.email.includes(".")) {
-       newsLetter(e);
+      newsLetter(e);
     } else {
       handleClick();
     }
@@ -88,30 +88,25 @@ export default function Home() {
     reset();
   };
 
-  const data = {
-    members: [
-      {
-        email_address: values.email,
-        status: "subscribed",
-      },
-    ],
-  };
-
   const newsLetter = async (e) => {
     try {
-      const res = await fetch(
-        `https://us13.api.mailchimp.com/3.0/lists/707df41775`,
-        {
-          method: "POST",
-          headers: {
-            Authorization: "auth 3cccef5c3c50495cecf92db82a2c1e41-us13",
-          },
-          body: JSON.stringify(data),
-        }
-      );
-      console.log("run api");
-      const res2 = res.json();
+      const res = await fetch(`http://localhost:3000/api/newsletter`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: values.email,
+        }),
+      });
+      const res2 = await res.json();
       console.log(res2);
+      if (res2.message === "Success") {
+        Cookies.set("subscribed", true);
+        handleClose3();
+      } else {
+        handleClick();
+      }
     } catch (err) {
       console.log(err);
     }
@@ -152,10 +147,15 @@ export default function Home() {
     },
   };
 
-  const [open3, setOpen3] = React.useState(true);
+  const [open3, setOpen3] = React.useState(false);
+
+  React.useEffect(()=>{
+    handleClickOpen3()
+  }, [])
 
   const handleClickOpen3 = () => {
-    setOpen3(true);
+    console.log(Cookies.get("subscribed"))
+    Cookies.get("subscribed") ? setOpen3(false) : setOpen3(true);
   };
 
   const handleClose3 = () => {
@@ -495,7 +495,7 @@ export default function Home() {
       {/* End Slider Area */}
       {/* Start About Area */}
       <div id="about" className="fix">
-        <div className="about-area bg_color--5">
+        <div className="ptb--120 about-area bg_color--5">
           <div className="about-wrapper">
             <div className="container">
               <div className="row row--35">
@@ -791,7 +791,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="rn-brand-area ptb--120 bg_color--5">
+        <div className="rn-brand-area bg_color--5">
           <div className="container">
             <div className="row">
               <div className="col-lg-10 offset-lg-1 mt--30">
@@ -808,7 +808,7 @@ export default function Home() {
 
       {/* Start Sewrvices Area */}
       <div id="service" className="fix">
-        <div className="service-area creative-service-wrapper bg_color--5">
+        <div className="service-area ptb--120 creative-service-wrapper bg_color--5">
           <div className="container">
             <div className="row">
               <div className="col-lg-12">

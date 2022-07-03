@@ -482,7 +482,7 @@ export default function Home() {
       {/* End Slider Area */}
       {/* Start About Area */}
       <div id="about" className="fix">
-        <div className="about-area pb--120 bg_color--5">
+        <div className="about-area bg_color--5">
           <div className="about-wrapper">
             <div className="container">
               <div className="row row--35">
@@ -795,7 +795,7 @@ export default function Home() {
 
       {/* Start Sewrvices Area */}
       <div id="service" className="fix">
-        <div className="service-area creative-service-wrapper pb--120 bg_color--5">
+        <div className="service-area creative-service-wrapper bg_color--5">
           <div className="container">
             <div className="row">
               <div className="col-lg-12">

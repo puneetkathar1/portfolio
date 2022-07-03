@@ -17,10 +17,22 @@ import { SocialIcon } from "react-social-icons";
 import YouTube from "react-youtube";
 import TextField from "@material-ui/core/TextField";
 import Cookies from "js-cookie";
+import Backdrop from "@material-ui/core/Backdrop";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  backdrop: {
+    zIndex: theme.zIndex.drawer + 1,
+    color: "#fff",
+  },
+}));
+
 export default function Home() {
   function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
   }
+  const classes = useStyles();
 
   const [show, setShow] = React.useState("1");
   const [testimonial, setTestimonial] = React.useState("1");
@@ -39,6 +51,7 @@ export default function Home() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    handleToggle();
     formValidate(e);
   };
 
@@ -75,17 +88,31 @@ export default function Home() {
     }
   };
 
-  const sendEmail = (e) => {
-    emailjs.init("user_csHlZlyxLBJpueJqtTp2L");
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    // emailjs.init("user_csHlZlyxLBJpueJqtTp2L");
 
-    emailjs.send("service_lrb78yf", "template_nrv8xa4", {
-      subject: values.subject,
-      email: values.email,
-      message: values.message,
+    // emailjs.send("service_lrb78yf", "template_nrv8xa4", {
+    //   subject: values.subject,
+    //   email: values.email,
+    //   message: values.message,
+    // });
+    const result = await fetch(`http://localhost:3000/api/email`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        subject: values.subject,
+        text: `Email ID ${values.email} has sent you a message -: ${values.message}`,
+      }),
     });
-    console.log("done");
-    setOpen(true);
-    reset();
+
+    const result2 = await result.json();
+    if (result2.message === "Message Sent") {
+      console.log("done");
+      setOpen(true);
+    }
   };
 
   const newsLetter = async (e) => {
@@ -131,6 +158,7 @@ export default function Home() {
   };
   const handleClose = () => {
     setOpen(false);
+    setLoading(false)
   };
 
   const videoEnd = () => {
@@ -162,6 +190,11 @@ export default function Home() {
     setOpen3(false);
   };
 
+  const [loading, setLoading] = React.useState(false);
+
+  const handleToggle = () => {
+    setLoading(!loading);
+  };
   return (
     <div>
       <Head>
@@ -205,6 +238,9 @@ export default function Home() {
       <link rel="stylesheet" href="/assets/css/vendor/odometer.css" />
       <link rel="stylesheet" href="/assets/css/style.css" />
       {/* Strart Header Area */}
+      <Backdrop className={classes.backdrop} open={loading}>
+        <CircularProgress color="inherit" />
+      </Backdrop>
       <header className="header-area header-style-two header--fixed header--sticky color-black">
         <div className="header-wrapper">
           <div className="header-left d-flex align-items-center">

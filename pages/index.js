@@ -45,6 +45,7 @@ export default function Home() {
   const handleSubmit2 = (e) => {
     e.preventDefault();
     formValidate2(e);
+    console.log("reached here");
   };
 
   const reset = () => {
@@ -68,11 +69,7 @@ export default function Home() {
 
   const formValidate2 = (e) => {
     if (values.email.includes("@") && values.email.includes(".")) {
-      if (values.subject.length > 2) {
-          return newsLetter(e);
-      } else {
-        handleClick();
-      }
+       newsLetter(e);
     } else {
       handleClick();
     }
@@ -91,18 +88,34 @@ export default function Home() {
     reset();
   };
 
+  const data = {
+    members: [
+      {
+        email_address: values.email,
+        status: "subscribed",
+      },
+    ],
+  };
+
   const newsLetter = async (e) => {
     try {
-      const res = await fetch(`https://us13.api.mailchimp.com/3.0/`);
-      const data = await res.json();
-      console.log(data);
-      console.log("done");
-      setOpen(true);
-      reset();
+      const res = await fetch(
+        `https://us13.api.mailchimp.com/3.0/lists/707df41775`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: "auth 3cccef5c3c50495cecf92db82a2c1e41-us13",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+      console.log("run api");
+      const res2 = res.json();
+      console.log(res2);
     } catch (err) {
       console.log(err);
     }
-  }
+  };
 
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
@@ -133,13 +146,13 @@ export default function Home() {
   const opts = {
     width: "100%",
     playerVars: {
-      autoplay: 1,
+      autoplay: 0,
       controls: 0,
       rel: 0,
     },
   };
 
-  const [open3, setOpen3] = React.useState(false);
+  const [open3, setOpen3] = React.useState(true);
 
   const handleClickOpen3 = () => {
     setOpen3(true);

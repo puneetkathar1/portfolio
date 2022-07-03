@@ -482,7 +482,7 @@ export default function Home() {
       {/* End Slider Area */}
       {/* Start About Area */}
       <div id="about" className="fix">
-        <div className="about-area bg_color--5">
+        <div className="about-area pb--120 bg_color--5">
           <div className="about-wrapper">
             <div className="container">
               <div className="row row--35">
@@ -2266,7 +2266,7 @@ export default function Home() {
         </DialogActions>
       </Dialog>
 
-      <Dialog open={true} onClose={handleClose3}>
+      <Dialog open={open3} onClose={handleClose3}>
         <DialogTitle>
           {" "}
           <div className="section-title text-center">

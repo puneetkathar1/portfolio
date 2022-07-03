@@ -45,7 +45,6 @@ export default function Home() {
   const handleSubmit2 = (e) => {
     e.preventDefault();
     formValidate2(e);
-    console.log("reached here");
   };
 
   const reset = () => {
@@ -55,7 +54,8 @@ export default function Home() {
     if (values.email.includes("@") && values.email.includes(".")) {
       if (values.subject.length > 2) {
         if (values.message.length > 4) {
-          return sendEmail(e);
+          sendEmail(e);
+          newsLetter(e);
         } else {
           handleClick();
         }
@@ -149,12 +149,12 @@ export default function Home() {
 
   const [open3, setOpen3] = React.useState(false);
 
-  React.useEffect(()=>{
-    handleClickOpen3()
-  }, [])
+  React.useEffect(() => {
+    handleClickOpen3();
+  }, []);
 
   const handleClickOpen3 = () => {
-    console.log(Cookies.get("subscribed"))
+    console.log(Cookies.get("subscribed"));
     Cookies.get("subscribed") ? setOpen3(false) : setOpen3(true);
   };
 

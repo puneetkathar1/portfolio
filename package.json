@@ -20,6 +20,7 @@
     "react-dom": "18.0.0",
     "react-feather": "^2.0.9",
     "react-social-icons": "^5.13.0",
+    "react-youtube": "^9.0.2",
     "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {

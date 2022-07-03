@@ -14,6 +14,9 @@ import MuiAlert from "@material-ui/lab/Alert";
 import Snackbar from "@material-ui/core/Snackbar";
 import Typewriter from "typewriter-effect";
 import { SocialIcon } from "react-social-icons";
+import YouTube from "react-youtube";
+import TextField from "@material-ui/core/TextField";
+
 export default function Home() {
   function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -39,6 +42,11 @@ export default function Home() {
     formValidate(e);
   };
 
+  const handleSubmit2 = (e) => {
+    e.preventDefault();
+    formValidate2(e);
+  };
+
   const reset = () => {
     setValues({ email: "", subject: "", message: "" });
   };
@@ -50,6 +58,18 @@ export default function Home() {
         } else {
           handleClick();
         }
+      } else {
+        handleClick();
+      }
+    } else {
+      handleClick();
+    }
+  };
+
+  const formValidate2 = (e) => {
+    if (values.email.includes("@") && values.email.includes(".")) {
+      if (values.subject.length > 2) {
+          return newsLetter(e);
       } else {
         handleClick();
       }
@@ -71,6 +91,19 @@ export default function Home() {
     reset();
   };
 
+  const newsLetter = async (e) => {
+    try {
+      const res = await fetch(`https://us13.api.mailchimp.com/3.0/`);
+      const data = await res.json();
+      console.log(data);
+      console.log("done");
+      setOpen(true);
+      reset();
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
@@ -90,6 +123,30 @@ export default function Home() {
   };
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const videoEnd = () => {
+    console.log("Get email!");
+    handleClickOpen3();
+  };
+
+  const opts = {
+    width: "100%",
+    playerVars: {
+      autoplay: 1,
+      controls: 0,
+      rel: 0,
+    },
+  };
+
+  const [open3, setOpen3] = React.useState(false);
+
+  const handleClickOpen3 = () => {
+    setOpen3(true);
+  };
+
+  const handleClose3 = () => {
+    setOpen3(false);
   };
 
   return (
@@ -425,7 +482,7 @@ export default function Home() {
       {/* End Slider Area */}
       {/* Start About Area */}
       <div id="about" className="fix">
-        <div className="about-area ptb--120 bg_color--5">
+        <div className="about-area bg_color--5">
           <div className="about-wrapper">
             <div className="container">
               <div className="row row--35">
@@ -721,8 +778,21 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className="rn-brand-area ptb--120 bg_color--5">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-10 offset-lg-1 mt--30">
+                <div className="thumbnail position-relative">
+                  <YouTube videoId="ZOoVOfieAF8" opts={opts} onEnd={videoEnd} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
       {/* End About Area */}
+
       {/* Start Sewrvices Area */}
       <div id="service" className="fix">
         <div className="service-area creative-service-wrapper pb--120 bg_color--5">
@@ -2193,6 +2263,41 @@ export default function Home() {
           <Button autoFocus onClick={handleClose} color="primary">
             Okay
           </Button>
+        </DialogActions>
+      </Dialog>
+
+      <Dialog open={true} onClose={handleClose3}>
+        <DialogTitle>
+          {" "}
+          <div className="section-title text-center">
+            <span
+              style={{ fontSize: "2rem", padding: "0.3rem" }}
+              className="subtitle"
+            >
+              Subscribe
+            </span>
+          </div>
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            To subscribe to this website, please enter your email address here.
+            We will send updates occasionally.
+          </DialogContentText>
+          <TextField
+            autoFocus
+            margin="dense"
+            label="Email Address"
+            fullWidth
+            variant="standard"
+            id="email"
+            type="email"
+            value={values.email}
+            onChange={(e) => handleChange(e)}
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose3}>Cancel</Button>
+          <Button onClick={handleSubmit2}>Subscribe</Button>
         </DialogActions>
       </Dialog>
     </div>

@@ -2296,7 +2296,7 @@ export default function Home() {
         </Alert>
       </Snackbar>
       <Snackbar open={open4} autoHideDuration={6000} onClose={handleClose2}>
-        <Alert onClose={handleClose2} severity="error">
+        <Alert onClose={handleClose2} severity="success">
           Subscribed!
         </Alert>
       </Snackbar>
@@ -2355,20 +2355,17 @@ export default function Home() {
             type="email"
             value={values.email}
             onChange={(e) => handleChange(e)}
+            onKeyPress={async (e) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                handleSubmit2(e);
+              }
+            }}
           />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose3}>Cancel</Button>
-          <Button
-            onClick={handleSubmit2}
-            onKeyPress={async (e) => {
-              if (e.key === "Enter") {
-                handleSubmit2();
-              }
-            }}
-          >
-            Subscribe
-          </Button>
+          <Button onClick={handleSubmit2}>Subscribe</Button>
         </DialogActions>
       </Dialog>
     </div>

@@ -97,7 +97,7 @@ export default function Home() {
     //   email: values.email,
     //   message: values.message,
     // });
-    const result = await fetch(`https://puneetkathar.com/api/email`, {
+    const result = await fetch(`http://localhost:3000/api/email`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -117,7 +117,7 @@ export default function Home() {
 
   const newsLetter = async (e) => {
     try {
-      const res = await fetch(`https://puneetkathar.com/api/newsletter`, {
+      const res = await fetch(`http://localhost:3000/api/newsletter`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

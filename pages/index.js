@@ -131,6 +131,7 @@ export default function Home() {
       if (res2.message === "Success") {
         Cookies.set("subscribed", true);
         handleClose3();
+        handleClick2();
       } else {
         handleClick();
       }
@@ -149,12 +150,19 @@ export default function Home() {
     setOpen2(true);
   };
 
+  const [open4, setOpen4] = React.useState(false);
+
+  const handleClick2 = () => {
+    setOpen4(true);
+  };
+
   const handleClose2 = (event, reason) => {
     if (reason === "clickaway") {
       return;
     }
 
     setOpen2(false);
+    setOpen4(false);
   };
   const handleClose = () => {
     setOpen(false);
@@ -2287,6 +2295,11 @@ export default function Home() {
           Error!
         </Alert>
       </Snackbar>
+      <Snackbar open={open4} autoHideDuration={6000} onClose={handleClose2}>
+        <Alert onClose={handleClose2} severity="error">
+          Subscribed!
+        </Alert>
+      </Snackbar>
       <Dialog
         fullScreen={fullScreen}
         open={open}
@@ -2346,7 +2359,16 @@ export default function Home() {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose3}>Cancel</Button>
-          <Button onClick={handleSubmit2}>Subscribe</Button>
+          <Button
+            onClick={handleSubmit2}
+            onKeyPress={async (e) => {
+              if (e.key === "Enter") {
+                handleSubmit2();
+              }
+            }}
+          >
+            Subscribe
+          </Button>
         </DialogActions>
       </Dialog>
     </div>

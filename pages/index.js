@@ -21,6 +21,7 @@ import Backdrop from "@material-ui/core/Backdrop";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { makeStyles } from "@material-ui/core/styles";
 
+
 const useStyles = makeStyles((theme) => ({
   backdrop: {
     zIndex: theme.zIndex.drawer + 1,
@@ -211,7 +212,7 @@ export default function Home() {
         <meta charSet="utf-8" />
         <meta
           name="description"
-          content="Hire the Best Website Developer as a Freelancer. This is the portfolio of Puneet Kathar showing his previous work and a career as a Web Dev freelance."
+          content="Offering Web Development services including E-Commerce, SaaS, "
         />
       </Head>
       {/* Favicon */}

@@ -52,7 +52,6 @@ export default function Home() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleToggle();
     formValidate(e);
   };
 
@@ -167,7 +166,6 @@ export default function Home() {
   };
   const handleClose = () => {
     setOpen(false);
-    setLoading(false);
   };
 
   const videoEnd = () => {
@@ -199,11 +197,11 @@ export default function Home() {
     setOpen3(false);
   };
 
-  const [loading, setLoading] = React.useState(false);
+  // const [loading, setLoading] = React.useState(false);
 
-  const handleToggle = () => {
-    setLoading(!loading);
-  };
+  // const handleToggle = () => {
+  //   setLoading(!loading);
+  // };
   return (
     <div>
       <Head>

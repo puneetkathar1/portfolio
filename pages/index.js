@@ -245,9 +245,9 @@ export default function Home() {
       <link rel="stylesheet" href="/assets/css/vendor/odometer.css" />
       <link rel="stylesheet" href="/assets/css/style.css" />
       {/* Strart Header Area */}
-      <Backdrop className={classes.backdrop} open={loading}>
+      {/* <Backdrop className={classes.backdrop} open={loading}>
         <CircularProgress color="inherit" />
-      </Backdrop>
+      </Backdrop> */}
       <header className="header-area header-style-two header--fixed header--sticky color-black">
         <div className="header-wrapper">
           <div className="header-left d-flex align-items-center">

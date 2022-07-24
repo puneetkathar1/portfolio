@@ -21,7 +21,6 @@ import Backdrop from "@material-ui/core/Backdrop";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { makeStyles } from "@material-ui/core/styles";
 
-
 const useStyles = makeStyles((theme) => ({
   backdrop: {
     zIndex: theme.zIndex.drawer + 1,
@@ -36,7 +35,19 @@ export default function Home() {
   const classes = useStyles();
 
   const [show, setShow] = React.useState("1");
-  const [testimonial, setTestimonial] = React.useState("1");
+  const [testimonial, setTestimonial] = React.useState(1);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      if (testimonial == 8) {
+        setTestimonial(1);
+      } else {
+        setTestimonial(++testimonial);
+      }
+    }, 7000);
+    return () => clearInterval(interval);
+  }, []);
+
   const [menu, setMenu] = React.useState(false);
 
   const [values, setValues] = React.useState({
@@ -1652,13 +1663,13 @@ export default function Home() {
               >
                 <li>
                   <a
-                    className={testimonial == "1" ? "active" : ""}
+                    className={testimonial == 1 ? "active" : ""}
                     id="tab1-tab"
                     data-bs-toggle="tab"
                     role="tab"
                     aria-controls="tab1"
                     aria-selected="true"
-                    onClick={() => setTestimonial("1")}
+                    onClick={() => setTestimonial(1)}
                   >
                     <div className="testimonial-thumbnai">
                       <div className="thumb">
@@ -1672,13 +1683,13 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                    className={testimonial == "2" ? "active" : ""}
+                    className={testimonial == 2 ? "active" : ""}
                     id="tab2-tab"
                     data-bs-toggle="tab"
                     role="tab"
                     aria-controls="tab2"
                     aria-selected="false"
-                    onClick={() => setTestimonial("2")}
+                    onClick={() => setTestimonial(2)}
                   >
                     <div className="testimonial-thumbnai">
                       <div className="thumb">
@@ -1692,13 +1703,13 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                    className={testimonial == "3" ? "active" : ""}
+                    className={testimonial == 3 ? "active" : ""}
                     id="tab3-tab"
                     data-bs-toggle="tab"
                     role="tab"
                     aria-controls="tab3"
                     aria-selected="false"
-                    onClick={() => setTestimonial("3")}
+                    onClick={() => setTestimonial(3)}
                   >
                     <div className="testimonial-thumbnai">
                       <div className="thumb">
@@ -1712,10 +1723,10 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                    className={testimonial == "4" ? "active" : ""}
+                    className={testimonial == 4 ? "active" : ""}
                     id="tab4-tab"
                     data-bs-toggle="tab"
-                    onClick={() => setTestimonial("4")}
+                    onClick={() => setTestimonial(4)}
                     role="tab"
                     aria-controls="tab4"
                     aria-selected="false"
@@ -1733,10 +1744,10 @@ export default function Home() {
 
                 <li>
                   <a
-                    className={testimonial == "5" ? "active" : ""}
+                    className={testimonial == 5 ? "active" : ""}
                     id="tab5-tab"
                     data-bs-toggle="tab"
-                    onClick={() => setTestimonial("5")}
+                    onClick={() => setTestimonial(5)}
                     role="tab"
                     aria-controls="tab5"
                     aria-selected="false"
@@ -1754,10 +1765,10 @@ export default function Home() {
 
                 <li>
                   <a
-                    className={testimonial == "6" ? "active" : ""}
+                    className={testimonial == 6 ? "active" : ""}
                     id="tab6-tab"
                     data-bs-toggle="tab"
-                    onClick={() => setTestimonial("6")}
+                    onClick={() => setTestimonial(6)}
                     role="tab"
                     aria-controls="tab6"
                     aria-selected="false"
@@ -1775,10 +1786,10 @@ export default function Home() {
 
                 <li>
                   <a
-                    className={testimonial == "7" ? "active" : ""}
+                    className={testimonial == 7 ? "active" : ""}
                     id="tab7-tab"
                     data-bs-toggle="tab"
-                    onClick={() => setTestimonial("7")}
+                    onClick={() => setTestimonial(7)}
                     role="tab"
                     aria-controls="tab7"
                     aria-selected="false"
@@ -1796,10 +1807,10 @@ export default function Home() {
 
                 <li>
                   <a
-                    className={testimonial == "8" ? "active" : ""}
+                    className={testimonial == 8 ? "active" : ""}
                     id="tab8-tab"
                     data-bs-toggle="tab"
-                    onClick={() => setTestimonial("8")}
+                    onClick={() => setTestimonial(8)}
                     role="tab"
                     aria-controls="tab8"
                     aria-selected="false"

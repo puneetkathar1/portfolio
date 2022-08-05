@@ -17,8 +17,7 @@ import { SocialIcon } from "react-social-icons";
 import YouTube from "react-youtube";
 import TextField from "@material-ui/core/TextField";
 import Cookies from "js-cookie";
-import Backdrop from "@material-ui/core/Backdrop";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import { useInView } from 'react-intersection-observer';
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -32,6 +31,11 @@ export default function Home() {
   function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
   }
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
+  
   const classes = useStyles();
 
   const [show, setShow] = React.useState("1");
@@ -187,7 +191,7 @@ export default function Home() {
   const opts = {
     width: "100%",
     playerVars: {
-      autoplay: 0,
+      autoplay: inView ? 1 : 0,
       controls: 0,
       rel: 0,
     },
@@ -845,7 +849,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="rn-brand-area bg_color--5">
+        <div ref={ref} className="rn-brand-area bg_color--5">
           <div className="container">
             <div className="row">
               <div className="col-lg-10 offset-lg-1 mt--30">

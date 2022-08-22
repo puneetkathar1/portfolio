@@ -333,7 +333,7 @@ export default function Home() {
                   <SocialIcon url="https://www.linkedin.com/in/puneetkathar1/" />
                 </li>
                 <li>
-                  <SocialIcon url="https://twitter.com/puneetkathar1" />
+                  <SocialIcon url="https://github.com/puneetkathar1" />
                 </li>
               </ul>
             </div>
@@ -2255,6 +2255,11 @@ export default function Home() {
                       fgColor="#fff"
                       url="https://www.linkedin.com/in/puneetkathar1/"
                     />
+                  </li>
+                  <li>
+                  <SocialIcon 
+                  fgColor="#fff"
+                  url="https://github.com/puneetkathar1" />
                   </li>
                   <li>
                     <SocialIcon

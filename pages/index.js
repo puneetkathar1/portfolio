@@ -1141,15 +1141,12 @@ export default function Home() {
                 </div>
               </div>
               <div className="row">
-              <div className="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div className="col-lg-4 col-md-6 col-sm-6 col-12">
                   <div className="im_portfolio text-center mt--40">
                     <div className="thumbnail_inner">
                       <div className="thumbnail">
                         <a>
-                          <img
-                            src="/market.gif"
-                            alt="Web Dev Puneet Kathar"
-                          />
+                          <img src="/xara.gif" alt="Web Dev Puneet Kathar" />
                         </a>
                       </div>
                     </div>
@@ -1157,7 +1154,42 @@ export default function Home() {
                       <div className="inner">
                         <div className="portfolio_heading">
                           <div className="category_list">
-                            <a>NextJS(Websockets, NodeJS, ReactJS, PostgreSQL, Next-Auth)</a>
+                            <a>NextJS(Solidity, Web3, ReactJS)</a>
+                          </div>
+                          <h4 className="title">
+                            <a>NFT Mint</a>
+                          </h4>
+                        </div>
+                        <div className="portfolio_hover">
+                          <p>Xaracity is a NFT mint website.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <a
+                      href="https://xara-city-site-lilac.vercel.app/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="transparent_link"
+                    />
+                  </div>
+                </div>
+                <div className="col-lg-4 col-md-6 col-sm-6 col-12">
+                  <div className="im_portfolio text-center mt--40">
+                    <div className="thumbnail_inner">
+                      <div className="thumbnail">
+                        <a>
+                          <img src="/market.gif" alt="Web Dev Puneet Kathar" />
+                        </a>
+                      </div>
+                    </div>
+                    <div className="content">
+                      <div className="inner">
+                        <div className="portfolio_heading">
+                          <div className="category_list">
+                            <a>
+                              NextJS(Websockets, NodeJS, ReactJS, PostgreSQL,
+                              Next-Auth)
+                            </a>
                           </div>
                           <h4 className="title">
                             <a>Share Market Orders</a>
@@ -1169,22 +1201,19 @@ export default function Home() {
                       </div>
                     </div>
                     <a
-                      href="https://bpmn-react.vercel.app/"
+                      href="/"
                       target="_blank"
                       rel="noreferrer"
                       className="transparent_link"
                     />
                   </div>
                 </div>
-              <div className="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div className="col-lg-4 col-md-6 col-sm-6 col-12">
                   <div className="im_portfolio text-center mt--40">
                     <div className="thumbnail_inner">
                       <div className="thumbnail">
                         <a>
-                          <img
-                            src="/bpmn.png"
-                            alt="Web Dev Puneet Kathar"
-                          />
+                          <img src="/bpmn.png" alt="Web Dev Puneet Kathar" />
                         </a>
                       </div>
                     </div>
@@ -2327,9 +2356,10 @@ export default function Home() {
                     />
                   </li>
                   <li>
-                  <SocialIcon 
-                  fgColor="#fff"
-                  url="https://github.com/puneetkathar1" />
+                    <SocialIcon
+                      fgColor="#fff"
+                      url="https://github.com/puneetkathar1"
+                    />
                   </li>
                   <li>
                     <SocialIcon

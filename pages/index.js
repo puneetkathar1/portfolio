@@ -1141,6 +1141,38 @@ export default function Home() {
                 </div>
               </div>
               <div className="row">
+              <div className="col-lg-4 col-md-6 col-sm-6 col-12">
+                  <div className="im_portfolio text-center mt--40">
+                    <div className="thumbnail_inner">
+                      <div className="thumbnail">
+                        <a>
+                          <img height={535} src="/copyai.png" alt="Web Dev Puneet Kathar" />
+                        </a>
+                      </div>
+                    </div>
+                    <div className="content">
+                      <div className="inner">
+                        <div className="portfolio_heading">
+                          <div className="category_list">
+                            <a>NextJS SaaS(NodeJS, OpenAI, MongoDB, ReactJS)</a>
+                          </div>
+                          <h4 className="title">
+                            <a>Text/Image generator + Semrush Analytics</a>
+                          </h4>
+                        </div>
+                        <div className="portfolio_hover">
+                          <p>This website is a Copy.ai clone which can generate images and text and also provides keywords research through semrush.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <a
+                      href="https://xara-city-site-lilac.vercel.app/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="transparent_link"
+                    />
+                  </div>
+                </div>
                 <div className="col-lg-4 col-md-6 col-sm-6 col-12">
                   <div className="im_portfolio text-center mt--40">
                     <div className="thumbnail_inner">

@@ -1,107 +1,106 @@
-import React from "react";
-import Head from "next/head";
-import Link from "next/link";
-import emailjs from "emailjs-com";
-import Button from "@material-ui/core/Button";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
-import { useTheme } from "@material-ui/core/styles";
-import MuiAlert from "@material-ui/lab/Alert";
-import Snackbar from "@material-ui/core/Snackbar";
-import Typewriter from "typewriter-effect";
-import { SocialIcon } from "react-social-icons";
-import YouTube from "react-youtube";
-import TextField from "@material-ui/core/TextField";
-import Cookies from "js-cookie";
+import React from 'react'
+import Head from 'next/head'
+import Link from 'next/link'
+import emailjs from 'emailjs-com'
+import Button from '@material-ui/core/Button'
+import Dialog from '@material-ui/core/Dialog'
+import DialogActions from '@material-ui/core/DialogActions'
+import DialogContent from '@material-ui/core/DialogContent'
+import DialogContentText from '@material-ui/core/DialogContentText'
+import DialogTitle from '@material-ui/core/DialogTitle'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
+import { useTheme } from '@material-ui/core/styles'
+import MuiAlert from '@material-ui/lab/Alert'
+import Snackbar from '@material-ui/core/Snackbar'
+import Typewriter from 'typewriter-effect'
+import { SocialIcon } from 'react-social-icons'
+import YouTube from 'react-youtube'
+import TextField from '@material-ui/core/TextField'
+import Cookies from 'js-cookie'
 
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
   backdrop: {
     zIndex: theme.zIndex.drawer + 1,
-    color: "#fff",
+    color: '#fff',
   },
-}));
+}))
 
 export default function Home() {
   function Alert(props) {
-    return <MuiAlert elevation={6} variant="filled" {...props} />;
+    return <MuiAlert elevation={6} variant="filled" {...props} />
   }
 
-  
-  const classes = useStyles();
+  const classes = useStyles()
 
-  const [show, setShow] = React.useState("1");
-  const [testimonial, setTestimonial] = React.useState(1);
+  const [show, setShow] = React.useState('1')
+  const [testimonial, setTestimonial] = React.useState(1)
 
   React.useEffect(() => {
     const interval = setInterval(() => {
       if (testimonial == 8) {
-        setTestimonial(1);
+        setTestimonial(1)
       } else {
-        setTestimonial(++testimonial);
+        setTestimonial(++testimonial)
       }
-    }, 7000);
-    return () => clearInterval(interval);
-  }, []);
+    }, 7000)
+    return () => clearInterval(interval)
+  }, [])
 
-  const [menu, setMenu] = React.useState(false);
+  const [menu, setMenu] = React.useState(false)
 
   const [values, setValues] = React.useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-  });
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: '',
+  })
   const handleChange = (e) => {
-    setValues({ ...values, [e.target.id]: e.target.value });
-  };
+    setValues({ ...values, [e.target.id]: e.target.value })
+  }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    formValidate(e);
-  };
+    e.preventDefault()
+    formValidate(e)
+  }
 
   const handleSubmit2 = (e) => {
-    e.preventDefault();
-    formValidate2(e);
-  };
+    e.preventDefault()
+    formValidate2(e)
+  }
 
   const reset = () => {
-    setValues({ email: "", subject: "", message: "" });
-  };
+    setValues({ email: '', subject: '', message: '' })
+  }
   const formValidate = (e) => {
-    if (values.email.includes("@") && values.email.includes(".")) {
+    if (values.email.includes('@') && values.email.includes('.')) {
       if (values.subject.length > 2) {
         if (values.message.length > 4) {
-          sendEmail(e);
-          newsLetter(e);
+          sendEmail(e)
+          newsLetter(e)
         } else {
-          handleClick();
+          handleClick()
         }
       } else {
-        handleClick();
+        handleClick()
       }
     } else {
-      handleClick();
+      handleClick()
     }
-  };
+  }
 
   const formValidate2 = (e) => {
-    if (values.email.includes("@") && values.email.includes(".")) {
-      newsLetter(e);
+    if (values.email.includes('@') && values.email.includes('.')) {
+      newsLetter(e)
     } else {
-      handleClick();
+      handleClick()
     }
-  };
+  }
 
   const sendEmail = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     // emailjs.init("user_csHlZlyxLBJpueJqtTp2L");
 
     // emailjs.send("service_lrb78yf", "template_nrv8xa4", {
@@ -110,104 +109,104 @@ export default function Home() {
     //   message: values.message,
     // });
     const result = await fetch(`https://puneetkathar.com/api/email`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         subject: values.subject,
         text: `Email ID ${values.email} has sent you a message -: ${values.message}`,
       }),
-    });
+    })
 
-    const result2 = await result.json();
-    if (result2.message === "Message Sent") {
-      console.log("done");
-      setOpen(true);
+    const result2 = await result.json()
+    if (result2.message === 'Message Sent') {
+      console.log('done')
+      setOpen(true)
     }
-  };
+  }
 
   const newsLetter = async (e) => {
     try {
       const res = await fetch(`https://puneetkathar.com/api/newsletter`, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           email: values.email,
         }),
-      });
-      const res2 = await res.json();
-      console.log(res2);
-      if (res2.message === "Success") {
-        Cookies.set("subscribed", true);
-        handleClose3();
-        handleClick2();
+      })
+      const res2 = await res.json()
+      console.log(res2)
+      if (res2.message === 'Success') {
+        Cookies.set('subscribed', true)
+        handleClose3()
+        handleClick2()
       } else {
-        handleClick();
+        handleClick()
       }
     } catch (err) {
-      console.log(err);
+      console.log(err)
     }
-  };
+  }
 
-  const [open, setOpen] = React.useState(false);
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const [open, setOpen] = React.useState(false)
+  const theme = useTheme()
+  const fullScreen = useMediaQuery(theme.breakpoints.down('sm'))
 
-  const [open2, setOpen2] = React.useState(false);
+  const [open2, setOpen2] = React.useState(false)
 
   const handleClick = () => {
-    setOpen2(true);
-  };
+    setOpen2(true)
+  }
 
-  const [open4, setOpen4] = React.useState(false);
+  const [open4, setOpen4] = React.useState(false)
 
   const handleClick2 = () => {
-    setOpen4(true);
-  };
+    setOpen4(true)
+  }
 
   const handleClose2 = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
+    if (reason === 'clickaway') {
+      return
     }
 
-    setOpen2(false);
-    setOpen4(false);
-  };
+    setOpen2(false)
+    setOpen4(false)
+  }
   const handleClose = () => {
-    setOpen(false);
-  };
+    setOpen(false)
+  }
 
   const videoEnd = () => {
-    console.log("Get email!");
-    handleClickOpen3();
-  };
+    console.log('Get email!')
+    handleClickOpen3()
+  }
 
   const opts = {
-    width: "100%",
+    width: '100%',
     playerVars: {
       autoplay: 0,
       controls: 0,
       rel: 0,
     },
-  };
+  }
 
-  const [open3, setOpen3] = React.useState(false);
+  const [open3, setOpen3] = React.useState(false)
 
   React.useEffect(() => {
-    handleClickOpen3();
-  }, []);
+    handleClickOpen3()
+  }, [])
 
   const handleClickOpen3 = () => {
-    console.log(Cookies.get("subscribed"));
-    Cookies.get("subscribed") ? setOpen3(false) : setOpen3(true);
-  };
+    console.log(Cookies.get('subscribed'))
+    Cookies.get('subscribed') ? setOpen3(false) : setOpen3(true)
+  }
 
   const handleClose3 = () => {
-    setOpen3(false);
-  };
+    setOpen3(false)
+  }
 
   // const [loading, setLoading] = React.useState(false);
 
@@ -399,8 +398,8 @@ export default function Home() {
       <div
         className={
           menu
-            ? "rn-popup-mobile-menu one-page-popup-menu menu-open"
-            : "rn-popup-mobile-menu one-page-popup-menu"
+            ? 'rn-popup-mobile-menu one-page-popup-menu menu-open'
+            : 'rn-popup-mobile-menu one-page-popup-menu'
         }
       >
         <div className="inner">
@@ -518,16 +517,16 @@ export default function Home() {
                       Freelance Web Developer
                     </span>
                     <h1 className="title theme-gradient">
-                      Hello, I’m{" "}
+                      Hello, I’m{' '}
                       <span>
                         <Typewriter
                           options={{
-                            strings: ["Puneet Kathar", "a Fullstack Developer"],
+                            strings: ['Puneet Kathar', 'a Fullstack Developer'],
                             autoStart: true,
                             loop: true,
                           }}
                         />
-                      </span>{" "}
+                      </span>{' '}
                       Welcome to my Portfolio.
                     </h1>
                     <div className="slide-btn mt--20">
@@ -556,11 +555,11 @@ export default function Home() {
               <div className="row row--35">
                 <div
                   style={{
-                    alignItems: "center",
-                    flexWrap: "wrap",
-                    justifyContent: "center",
-                    flexDirection: "row",
-                    display: "flex",
+                    alignItems: 'center',
+                    flexWrap: 'wrap',
+                    justifyContent: 'center',
+                    flexDirection: 'row',
+                    display: 'flex',
                   }}
                   className="col-lg-5"
                 >
@@ -602,7 +601,7 @@ export default function Home() {
                                     <li className="nav-item">
                                       <button
                                         className={
-                                          show === "1" ? "active" : null
+                                          show === '1' ? 'active' : null
                                         }
                                         id="mainskill"
                                         data-bs-toggle="tab"
@@ -610,7 +609,7 @@ export default function Home() {
                                         role="tab"
                                         aria-controls="mainskill"
                                         aria-selected="true"
-                                        onClick={() => setShow("1")}
+                                        onClick={() => setShow('1')}
                                       >
                                         Main skills
                                       </button>
@@ -618,7 +617,7 @@ export default function Home() {
                                     <li className="nav-item">
                                       <button
                                         className={
-                                          show === "2" ? "active" : null
+                                          show === '2' ? 'active' : null
                                         }
                                         id="awards"
                                         data-bs-toggle="tab"
@@ -626,7 +625,7 @@ export default function Home() {
                                         role="tab"
                                         aria-controls="awards"
                                         aria-selected="false"
-                                        onClick={() => setShow("2")}
+                                        onClick={() => setShow('2')}
                                       >
                                         Courses
                                       </button>
@@ -634,7 +633,7 @@ export default function Home() {
                                     <li className="nav-item">
                                       <button
                                         className={
-                                          show === "3" ? "active" : null
+                                          show === '3' ? 'active' : null
                                         }
                                         id="experience"
                                         data-bs-toggle="tab"
@@ -642,7 +641,7 @@ export default function Home() {
                                         role="tab"
                                         aria-controls="experience"
                                         aria-selected="false"
-                                        onClick={() => setShow("3")}
+                                        onClick={() => setShow('3')}
                                       >
                                         Experience
                                       </button>
@@ -650,7 +649,7 @@ export default function Home() {
                                     <li className="nav-item">
                                       <button
                                         className={
-                                          show === "4" ? "active" : null
+                                          show === '4' ? 'active' : null
                                         }
                                         id="education"
                                         data-bs-toggle="tab"
@@ -658,7 +657,7 @@ export default function Home() {
                                         role="tab"
                                         aria-controls="education"
                                         aria-selected="false"
-                                        onClick={() => setShow("4")}
+                                        onClick={() => setShow('4')}
                                       >
                                         Education
                                       </button>
@@ -667,9 +666,9 @@ export default function Home() {
                                   <div className="tab-content">
                                     <div
                                       className={
-                                        show === "1"
-                                          ? "tab-pane fade show active"
-                                          : "tab-pane fade"
+                                        show === '1'
+                                          ? 'tab-pane fade show active'
+                                          : 'tab-pane fade'
                                       }
                                       id="rn-mainskill"
                                       role="tabpanel"
@@ -690,7 +689,7 @@ export default function Home() {
                                                 aria-valuenow={98}
                                                 aria-valuemin={0}
                                                 aria-valuemax={100}
-                                                style={{ width: "100%" }}
+                                                style={{ width: '100%' }}
                                               />
                                             </div>
                                             <span className="label">100%</span>
@@ -708,7 +707,7 @@ export default function Home() {
                                                 aria-valuenow={98}
                                                 aria-valuemin={0}
                                                 aria-valuemax={100}
-                                                style={{ width: "100%" }}
+                                                style={{ width: '100%' }}
                                               />
                                             </div>
                                             <span className="label">100%</span>
@@ -726,7 +725,7 @@ export default function Home() {
                                                 aria-valuenow={98}
                                                 aria-valuemin={0}
                                                 aria-valuemax={100}
-                                                style={{ width: "100%" }}
+                                                style={{ width: '100%' }}
                                               />
                                             </div>
                                             <span className="label">100%</span>
@@ -744,7 +743,7 @@ export default function Home() {
                                                 aria-valuenow={98}
                                                 aria-valuemin={0}
                                                 aria-valuemax={100}
-                                                style={{ width: "100%" }}
+                                                style={{ width: '100%' }}
                                               />
                                             </div>
                                             <span className="label">100%</span>
@@ -754,9 +753,9 @@ export default function Home() {
                                     </div>
                                     <div
                                       className={
-                                        show === "2"
-                                          ? "tab-pane fade show active"
-                                          : "tab-pane fade"
+                                        show === '2'
+                                          ? 'tab-pane fade show active'
+                                          : 'tab-pane fade'
                                       }
                                       id="rn-awards"
                                       role="tabpanel"
@@ -770,7 +769,7 @@ export default function Home() {
                                                 Build a MERN application using
                                                 NextJS
                                               </a>
-                                            </Link>{" "}
+                                            </Link>{' '}
                                             <span>Coursera</span>
                                           </li>
                                           <li>
@@ -779,7 +778,7 @@ export default function Home() {
                                                 The Complete 2022 Web
                                                 Development Bootcamp
                                               </a>
-                                            </Link>{" "}
+                                            </Link>{' '}
                                             <span> Udemy</span>
                                           </li>
                                         </ul>
@@ -787,9 +786,9 @@ export default function Home() {
                                     </div>
                                     <div
                                       className={
-                                        show === "3"
-                                          ? "tab-pane fade show active"
-                                          : "tab-pane fade"
+                                        show === '3'
+                                          ? 'tab-pane fade show active'
+                                          : 'tab-pane fade'
                                       }
                                       id="rn-experience"
                                       role="tabpanel"
@@ -808,9 +807,9 @@ export default function Home() {
                                     </div>
                                     <div
                                       className={
-                                        show === "4"
-                                          ? "tab-pane fade show active"
-                                          : "tab-pane fade"
+                                        show === '4'
+                                          ? 'tab-pane fade show active'
+                                          : 'tab-pane fade'
                                       }
                                       id="rn-education"
                                       role="tabpanel"
@@ -822,11 +821,11 @@ export default function Home() {
                                             <a>
                                               Bachelors of Technology
                                               <span>
-                                                {" "}
+                                                {' '}
                                                 - Jabalpur Engineering College,
                                                 IN
                                               </span>
-                                            </a>{" "}
+                                            </a>{' '}
                                             2020 - 2024
                                           </li>
                                         </ul>
@@ -871,7 +870,7 @@ export default function Home() {
                   <span className="subtitle">What I can do for you</span>
                   <h2 className="title">Service&#39;s Offered</h2>
                   <p>
-                    I love what I do and I do what my clients love. <br />{" "}
+                    I love what I do and I do what my clients love. <br />{' '}
                     Working with clients all over the world to create great
                     websites.
                   </p>
@@ -1141,12 +1140,54 @@ export default function Home() {
                 </div>
               </div>
               <div className="row">
-              <div className="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div className="col-lg-4 col-md-6 col-sm-6 col-12">
                   <div className="im_portfolio text-center mt--40">
                     <div className="thumbnail_inner">
                       <div className="thumbnail">
                         <a>
-                          <img height={535} src="/copyai.png" alt="Web Dev Puneet Kathar" />
+                          <img
+                            height={535}
+                            src="/stalliex.png"
+                            alt="Web Dev Puneet Kathar"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                    <div className="content">
+                      <div className="inner">
+                        <div className="portfolio_heading">
+                          <div className="category_list">
+                            <a>AWS, cPanel, Zoho - SalesIQ</a>
+                          </div>
+                          <h4 className="title">
+                            <a>OpenCart (E-Commerce)</a>
+                          </h4>
+                        </div>
+                        <div className="portfolio_hover">
+                          <p>
+                            This website is an E-Commerce built with OpenCart.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <a
+                      href="https://xara-city-site-lilac.vercel.app/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="transparent_link"
+                    />
+                  </div>
+                </div>
+                <div className="col-lg-4 col-md-6 col-sm-6 col-12">
+                  <div className="im_portfolio text-center mt--40">
+                    <div className="thumbnail_inner">
+                      <div className="thumbnail">
+                        <a>
+                          <img
+                            height={535}
+                            src="/copyai.png"
+                            alt="Web Dev Puneet Kathar"
+                          />
                         </a>
                       </div>
                     </div>
@@ -1161,7 +1202,11 @@ export default function Home() {
                           </h4>
                         </div>
                         <div className="portfolio_hover">
-                          <p>This website is a Copy.ai clone which can generate images and text and also provides keywords research through semrush.</p>
+                          <p>
+                            This website is a Copy.ai clone which can generate
+                            images and text and also provides keywords research
+                            through semrush.
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -1567,7 +1612,7 @@ export default function Home() {
       {/* Start testiomonial Area */}
       <div className="rn-testimonial-area pb--120 bg_color--5" id="testimonial">
         <div className="container">
-          <div style={{ marginBottom: "2rem" }} className="row">
+          <div style={{ marginBottom: '2rem' }} className="row">
             <div className="col-lg-12">
               <div className="section-title text-center mb--30 mb_sm--0">
                 <span className="subtitle">My Latest Reviews</span>
@@ -1584,9 +1629,9 @@ export default function Home() {
               >
                 <div
                   className={
-                    testimonial == "1"
-                      ? "tab-pane fade show active"
-                      : "tab-pane fade"
+                    testimonial == '1'
+                      ? 'tab-pane fade show active'
+                      : 'tab-pane fade'
                   }
                   id="tab1"
                   role="tabpanel"
@@ -1611,9 +1656,9 @@ export default function Home() {
 
                 <div
                   className={
-                    testimonial == "2"
-                      ? "tab-pane fade show active"
-                      : "tab-pane fade"
+                    testimonial == '2'
+                      ? 'tab-pane fade show active'
+                      : 'tab-pane fade'
                   }
                   id="tab2"
                   role="tabpanel"
@@ -1639,9 +1684,9 @@ export default function Home() {
 
                 <div
                   className={
-                    testimonial == "3"
-                      ? "tab-pane fade show active"
-                      : "tab-pane fade"
+                    testimonial == '3'
+                      ? 'tab-pane fade show active'
+                      : 'tab-pane fade'
                   }
                   id="tab3"
                   role="tabpanel"
@@ -1665,9 +1710,9 @@ export default function Home() {
 
                 <div
                   className={
-                    testimonial == "4"
-                      ? "tab-pane fade show active"
-                      : "tab-pane fade"
+                    testimonial == '4'
+                      ? 'tab-pane fade show active'
+                      : 'tab-pane fade'
                   }
                   id="tab4"
                   role="tabpanel"
@@ -1690,9 +1735,9 @@ export default function Home() {
 
                 <div
                   className={
-                    testimonial == "5"
-                      ? "tab-pane fade show active"
-                      : "tab-pane fade"
+                    testimonial == '5'
+                      ? 'tab-pane fade show active'
+                      : 'tab-pane fade'
                   }
                   id="tab5"
                   role="tabpanel"
@@ -1714,9 +1759,9 @@ export default function Home() {
 
                 <div
                   className={
-                    testimonial == "6"
-                      ? "tab-pane fade show active"
-                      : "tab-pane fade"
+                    testimonial == '6'
+                      ? 'tab-pane fade show active'
+                      : 'tab-pane fade'
                   }
                   id="tab6"
                   role="tabpanel"
@@ -1739,9 +1784,9 @@ export default function Home() {
 
                 <div
                   className={
-                    testimonial == "7"
-                      ? "tab-pane fade show active"
-                      : "tab-pane fade"
+                    testimonial == '7'
+                      ? 'tab-pane fade show active'
+                      : 'tab-pane fade'
                   }
                   id="tab7"
                   role="tabpanel"
@@ -1764,9 +1809,9 @@ export default function Home() {
 
                 <div
                   className={
-                    testimonial == "8"
-                      ? "tab-pane fade show active"
-                      : "tab-pane fade"
+                    testimonial == '8'
+                      ? 'tab-pane fade show active'
+                      : 'tab-pane fade'
                   }
                   id="tab8"
                   role="tabpanel"
@@ -1795,7 +1840,7 @@ export default function Home() {
               >
                 <li>
                   <a
-                    className={testimonial == 1 ? "active" : ""}
+                    className={testimonial == 1 ? 'active' : ''}
                     id="tab1-tab"
                     data-bs-toggle="tab"
                     role="tab"
@@ -1815,7 +1860,7 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                    className={testimonial == 2 ? "active" : ""}
+                    className={testimonial == 2 ? 'active' : ''}
                     id="tab2-tab"
                     data-bs-toggle="tab"
                     role="tab"
@@ -1835,7 +1880,7 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                    className={testimonial == 3 ? "active" : ""}
+                    className={testimonial == 3 ? 'active' : ''}
                     id="tab3-tab"
                     data-bs-toggle="tab"
                     role="tab"
@@ -1855,7 +1900,7 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                    className={testimonial == 4 ? "active" : ""}
+                    className={testimonial == 4 ? 'active' : ''}
                     id="tab4-tab"
                     data-bs-toggle="tab"
                     onClick={() => setTestimonial(4)}
@@ -1876,7 +1921,7 @@ export default function Home() {
 
                 <li>
                   <a
-                    className={testimonial == 5 ? "active" : ""}
+                    className={testimonial == 5 ? 'active' : ''}
                     id="tab5-tab"
                     data-bs-toggle="tab"
                     onClick={() => setTestimonial(5)}
@@ -1897,7 +1942,7 @@ export default function Home() {
 
                 <li>
                   <a
-                    className={testimonial == 6 ? "active" : ""}
+                    className={testimonial == 6 ? 'active' : ''}
                     id="tab6-tab"
                     data-bs-toggle="tab"
                     onClick={() => setTestimonial(6)}
@@ -1918,7 +1963,7 @@ export default function Home() {
 
                 <li>
                   <a
-                    className={testimonial == 7 ? "active" : ""}
+                    className={testimonial == 7 ? 'active' : ''}
                     id="tab7-tab"
                     data-bs-toggle="tab"
                     onClick={() => setTestimonial(7)}
@@ -1939,7 +1984,7 @@ export default function Home() {
 
                 <li>
                   <a
-                    className={testimonial == 8 ? "active" : ""}
+                    className={testimonial == 8 ? 'active' : ''}
                     id="tab8-tab"
                     data-bs-toggle="tab"
                     onClick={() => setTestimonial(8)}
@@ -2005,7 +2050,7 @@ export default function Home() {
                           className="feather feather-check"
                         >
                           <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>{" "}
+                        </svg>{' '}
                         UI/UX designs
                       </li>
                       <li>
@@ -2022,7 +2067,7 @@ export default function Home() {
                           className="feather feather-check"
                         >
                           <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>{" "}
+                        </svg>{' '}
                         Responsive
                       </li>
                       <li>
@@ -2039,7 +2084,7 @@ export default function Home() {
                           className="feather feather-check"
                         >
                           <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>{" "}
+                        </svg>{' '}
                         PSD to HTML
                       </li>
                       <li>
@@ -2056,7 +2101,7 @@ export default function Home() {
                           className="feather feather-check"
                         >
                           <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>{" "}
+                        </svg>{' '}
                         SEO Friendly
                       </li>
                     </ul>
@@ -2099,7 +2144,7 @@ export default function Home() {
                           className="feather feather-check"
                         >
                           <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>{" "}
+                        </svg>{' '}
                         Includes Basic & Standard
                       </li>
                       <li>
@@ -2116,7 +2161,7 @@ export default function Home() {
                           className="feather feather-check"
                         >
                           <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>{" "}
+                        </svg>{' '}
                         Cloud Hosting/DNS
                       </li>
                       <li>
@@ -2133,7 +2178,7 @@ export default function Home() {
                           className="feather feather-check"
                         >
                           <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>{" "}
+                        </svg>{' '}
                         Docker Image
                       </li>
 
@@ -2151,7 +2196,7 @@ export default function Home() {
                           className="feather feather-check"
                         >
                           <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>{" "}
+                        </svg>{' '}
                         Easily Scalable
                       </li>
                     </ul>
@@ -2194,7 +2239,7 @@ export default function Home() {
                           className="feather feather-check"
                         >
                           <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>{" "}
+                        </svg>{' '}
                         REST APIs / GraphQL
                       </li>
                       <li>
@@ -2211,7 +2256,7 @@ export default function Home() {
                           className="feather feather-check"
                         >
                           <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>{" "}
+                        </svg>{' '}
                         Automation
                       </li>
                       <li>
@@ -2228,7 +2273,7 @@ export default function Home() {
                           className="feather feather-check"
                         >
                           <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>{" "}
+                        </svg>{' '}
                         Fast & Secure
                       </li>
                       <li>
@@ -2245,7 +2290,7 @@ export default function Home() {
                           className="feather feather-check"
                         >
                           <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>{" "}
+                        </svg>{' '}
                         Database
                       </li>
                     </ul>
@@ -2355,7 +2400,7 @@ export default function Home() {
       </div>
       {/* End Contact Area */}
       <div
-        style={{ backgroundColor: "#081217" }}
+        style={{ backgroundColor: '#081217' }}
         className="footer-style-2 ptb--30 bg_color--6"
       >
         <div className="wrapper plr--50 plr_sm--20">
@@ -2455,14 +2500,14 @@ export default function Home() {
         aria-labelledby="responsive-dialog-title"
       >
         <DialogTitle id="responsive-dialog-title">
-          {" "}
-          <h1 style={{ margin: "0" }}> Great Choice! </h1>{" "}
+          {' '}
+          <h1 style={{ margin: '0' }}> Great Choice! </h1>{' '}
         </DialogTitle>
         <DialogContent>
           <DialogContentText
             style={{
-              marginTop: "0",
-              fontSize: "18px",
+              marginTop: '0',
+              fontSize: '18px',
               fontFamily: "'Montserrat', sans-serif",
             }}
           >
@@ -2478,10 +2523,10 @@ export default function Home() {
 
       <Dialog open={open3} onClose={handleClose3}>
         <DialogTitle>
-          {" "}
+          {' '}
           <div className="section-title text-center">
             <span
-              style={{ fontSize: "2rem", padding: "0.3rem" }}
+              style={{ fontSize: '2rem', padding: '0.3rem' }}
               className="subtitle"
             >
               Subscribe
@@ -2504,9 +2549,9 @@ export default function Home() {
             value={values.email}
             onChange={(e) => handleChange(e)}
             onKeyPress={async (e) => {
-              if (e.key === "Enter") {
-                e.preventDefault();
-                handleSubmit2(e);
+              if (e.key === 'Enter') {
+                e.preventDefault()
+                handleSubmit2(e)
               }
             }}
           />
@@ -2517,5 +2562,5 @@ export default function Home() {
         </DialogActions>
       </Dialog>
     </div>
-  );
+  )
 }

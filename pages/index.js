@@ -1171,7 +1171,7 @@ export default function Home() {
                       </div>
                     </div>
                     <a
-                      href="https://xara-city-site-lilac.vercel.app/"
+                      href="https://stalliex.com/"
                       target="_blank"
                       rel="noreferrer"
                       className="transparent_link"
@@ -1211,7 +1211,7 @@ export default function Home() {
                       </div>
                     </div>
                     <a
-                      href="https://xara-city-site-lilac.vercel.app/"
+                      href="https://paul-seven.vercel.app/"
                       target="_blank"
                       rel="noreferrer"
                       className="transparent_link"

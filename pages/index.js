@@ -1148,6 +1148,45 @@ export default function Home() {
                         <a>
                           <img
                             height={535}
+                            src="/QIQO.png"
+                            alt="Web Dev Puneet Kathar"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                    <div className="content">
+                      <div className="inner">
+                        <div className="portfolio_heading">
+                          <div className="category_list">
+                            <a>QIQO Chat with your Documents</a>
+                          </div>
+                          <h4 className="title">
+                            <a>Chat with your documents</a>
+                          </h4>
+                        </div>
+                        <div className="portfolio_hover">
+                          <p>
+                            Filegpt.app clone for chatting with your uploaded
+                            documents.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <a
+                      href="https://chatbot-ui-two-omega-67.vercel.app/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="transparent_link"
+                    />
+                  </div>
+                </div>
+                <div className="col-lg-4 col-md-6 col-sm-6 col-12">
+                  <div className="im_portfolio text-center mt--40">
+                    <div className="thumbnail_inner">
+                      <div className="thumbnail">
+                        <a>
+                          <img
+                            height={535}
                             src="/Eyewear.png"
                             alt="Web Dev Puneet Kathar"
                           />
@@ -1166,7 +1205,8 @@ export default function Home() {
                         </div>
                         <div className="portfolio_hover">
                           <p>
-                            8 models working together to predict eyewear specifications based on image.
+                            8 models working together to predict eyewear
+                            specifications based on image.
                           </p>
                         </div>
                       </div>

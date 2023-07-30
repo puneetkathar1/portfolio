@@ -1148,6 +1148,44 @@ export default function Home() {
                         <a>
                           <img
                             height={535}
+                            src="/bdsm.png"
+                            alt="Web Dev Puneet Kathar"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                    <div className="content">
+                      <div className="inner">
+                        <div className="portfolio_heading">
+                          <div className="category_list">
+                            <a>TiedUp - For BDSM DOM/SUB Task assignment and submissions</a>
+                          </div>
+                          <h4 className="title">
+                            <a>Task Management - BDSM (DOM/SUB)</a>
+                          </h4>
+                        </div>
+                        <div className="portfolio_hover">
+                          <p>
+                            DOM can assign Tasks, manage Rewards, Verify Submissions from SUB.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <a
+                      href="http://bdsm-client.vercel.app/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="transparent_link"
+                    />
+                  </div>
+                </div>
+                <div className="col-lg-4 col-md-6 col-sm-6 col-12">
+                  <div className="im_portfolio text-center mt--40">
+                    <div className="thumbnail_inner">
+                      <div className="thumbnail">
+                        <a>
+                          <img
+                            height={535}
                             src="/QIQO.png"
                             alt="Web Dev Puneet Kathar"
                           />

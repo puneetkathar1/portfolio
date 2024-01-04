@@ -329,6 +329,9 @@ export default function Home() {
             <div className="social-share-inner d-none d-sm-block">
               <ul className="social-share social-style--2 color-black d-flex justify-content-start liststyle">
                 <li>
+                  <SocialIcon url="https://twitter.com/puneetkathar1" />
+                </li>
+                <li>
                   <SocialIcon url="https://www.linkedin.com/in/puneetkathar1/" />
                 </li>
                 <li>
@@ -1141,6 +1144,34 @@ export default function Home() {
               </div>
 
               <div className="row">
+                <Link href="https://twitter.com/puneetkathar1">
+                  <a target="_blank" className='col-lg-4 col-md-6 col-sm-6 col-12'>
+                      <div className="im_portfolio text-center mt--40">
+                        <div className="thumbnail_inner">
+                          <div className="thumbnail">
+                            <img
+                              src="/tweet.png"
+                              alt="Web development agency"
+                            />
+                          </div>
+                        </div>
+                        <div className="content">
+                          <div className="inner">
+                            <div className="portfolio_heading">
+                              <div className="category_list"></div>
+                              <h4 className="title">Stay Connected on Twitter!</h4>
+                            </div>
+                            <div className="portfolio_hover">
+                              <p>
+                                Discover the latest projects I've been passionately working on.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <a className="transparent_link" />
+                      </div>
+                  </a>
+                </Link>
                 <div className="col-lg-4 col-md-6 col-sm-6 col-12">
                   <div className="im_portfolio text-center mt--40">
                     <div className="thumbnail_inner">
@@ -1158,7 +1189,10 @@ export default function Home() {
                       <div className="inner">
                         <div className="portfolio_heading">
                           <div className="category_list">
-                            <a>TiedUp - For BDSM DOM/SUB Task assignment and submissions</a>
+                            <a>
+                              TiedUp - For BDSM DOM/SUB Task assignment and
+                              submissions
+                            </a>
                           </div>
                           <h4 className="title">
                             <a>Task Management - BDSM (DOM/SUB)</a>
@@ -1166,7 +1200,8 @@ export default function Home() {
                         </div>
                         <div className="portfolio_hover">
                           <p>
-                            DOM can assign Tasks, manage Rewards, Verify Submissions from SUB.
+                            DOM can assign Tasks, manage Rewards, Verify
+                            Submissions from SUB.
                           </p>
                         </div>
                       </div>

@@ -1172,6 +1172,48 @@ export default function Home() {
                       </div>
                   </a>
                 </Link>
+
+                <div className="col-lg-4 col-md-6 col-sm-6 col-12">
+                  <div className="im_portfolio text-center mt--40">
+                    <div className="thumbnail_inner">
+                      <div className="thumbnail">
+                        <a>
+                          <img
+                            height={535}
+                            src="/stt.png"
+                            alt="Web Dev Puneet Kathar"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                    <div className="content">
+                      <div className="inner">
+                        <div className="portfolio_heading">
+                          <div className="category_list">
+                            <a>
+                              TTS/STT Indic Multilingual Model/API Development
+                            </a>
+                          </div>
+                          <h4 className="title">
+                            <a>Facebook seamless-m4t and mms-tts for Indic languages.</a>
+                          </h4>
+                        </div>
+                        <div className="portfolio_hover">
+                          <p>
+                            Includes Sentiment analysis with +red_flags, green_flags. Supports 35+ languages
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <a
+                      href="https://youtu.be/R68yKKfOnb0?si=ZynB3I6TrwvYq33U"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="transparent_link"
+                    />
+                  </div>
+                </div>
+
                 <div className="col-lg-4 col-md-6 col-sm-6 col-12">
                   <div className="im_portfolio text-center mt--40">
                     <div className="thumbnail_inner">

@@ -535,7 +535,7 @@ export default function Home() {
                     <div className="slide-btn mt--20">
                       <a
                         className="btn-default"
-                        href="https://drive.google.com/file/d/1KpPNQH6FmF_Vb0-TYsw1csqadBi_1CdV/view"
+                        href="https://drive.google.com/file/d/1CpfMZ3NWSbIY0MQa37kqCEglBZEByCva/view"
                         target="_blank"
                         rel="noreferrer"
                       >

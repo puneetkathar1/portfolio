@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import emailjs from 'emailjs-com'
@@ -19,6 +19,7 @@ import TextField from '@material-ui/core/TextField'
 import Cookies from 'js-cookie'
 
 import { makeStyles } from '@material-ui/core/styles'
+import Script from 'next/script'
 
 const useStyles = makeStyles((theme) => ({
   backdrop: {
@@ -33,6 +34,13 @@ export default function Home() {
   }
 
   const classes = useStyles()
+
+  useEffect(() => {
+    // Set your global variable here
+    window.chatbotConfig = {
+      chatbotId: 'clslpobdn0001pjt4nqzpsrbd',
+    }
+  }, [])
 
   const [show, setShow] = React.useState('1')
   const [testimonial, setTestimonial] = React.useState(1)
@@ -223,6 +231,10 @@ export default function Home() {
           name="description"
           content="Offering Web Development services including E-Commerce, SaaS, "
         />
+        <script
+          src="https://create-chatbots-umber.vercel.app/chatbot.js"
+          strategy="afterInteractive"
+        ></script>
       </Head>
       {/* Favicon */}
       <link
@@ -1145,31 +1157,34 @@ export default function Home() {
 
               <div className="row">
                 <Link href="https://twitter.com/puneetkathar1">
-                  <a target="_blank" className='col-lg-4 col-md-6 col-sm-6 col-12'>
-                      <div className="im_portfolio text-center mt--40">
-                        <div className="thumbnail_inner">
-                          <div className="thumbnail">
-                            <img
-                              src="/tweet.png"
-                              alt="Web development agency"
-                            />
-                          </div>
+                  <a
+                    target="_blank"
+                    className="col-lg-4 col-md-6 col-sm-6 col-12"
+                  >
+                    <div className="im_portfolio text-center mt--40">
+                      <div className="thumbnail_inner">
+                        <div className="thumbnail">
+                          <img src="/tweet.png" alt="Web development agency" />
                         </div>
-                        <div className="content">
-                          <div className="inner">
-                            <div className="portfolio_heading">
-                              <div className="category_list"></div>
-                              <h4 className="title">Stay Connected on Twitter!</h4>
-                            </div>
-                            <div className="portfolio_hover">
-                              <p>
-                                Discover the latest projects I've been passionately working on.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <a className="transparent_link" />
                       </div>
+                      <div className="content">
+                        <div className="inner">
+                          <div className="portfolio_heading">
+                            <div className="category_list"></div>
+                            <h4 className="title">
+                              Stay Connected on Twitter!
+                            </h4>
+                          </div>
+                          <div className="portfolio_hover">
+                            <p>
+                              Discover the latest projects I've been
+                              passionately working on.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <a className="transparent_link" />
+                    </div>
                   </a>
                 </Link>
 
@@ -1195,12 +1210,16 @@ export default function Home() {
                             </a>
                           </div>
                           <h4 className="title">
-                            <a>Facebook seamless-m4t and mms-tts for Indic languages.</a>
+                            <a>
+                              Facebook seamless-m4t and mms-tts for Indic
+                              languages.
+                            </a>
                           </h4>
                         </div>
                         <div className="portfolio_hover">
                           <p>
-                            Includes Sentiment analysis with +red_flags, green_flags. Supports 35+ languages
+                            Includes Sentiment analysis with +red_flags,
+                            green_flags. Supports 35+ languages
                           </p>
                         </div>
                       </div>

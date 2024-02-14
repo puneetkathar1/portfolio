@@ -1177,7 +1177,7 @@ export default function Home() {
                           </div>
                           <div className="portfolio_hover">
                             <p>
-                              Discover the latest projects I've been
+                              Discover the latest projects I&#39;ve been
                               passionately working on.
                             </p>
                           </div>

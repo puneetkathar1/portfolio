@@ -231,10 +231,6 @@ export default function Home() {
           name="description"
           content="Offering Web Development services including E-Commerce, SaaS, "
         />
-        <script
-          src="https://create-chatbots-umber.vercel.app/chatbot.js"
-          strategy="afterInteractive"
-        ></script>
       </Head>
       {/* Favicon */}
       <link
@@ -521,6 +517,10 @@ export default function Home() {
       </div>
       {/* End Popup Menu Area  */}
       {/* Start Slider Area */}
+      <Script
+        src="https://create-chatbots-umber.vercel.app/chatbot.js"
+        strategy="afterInteractive"
+      ></Script>
       <div id="home" className="fix">
         <div className="slider-wrapper">
           <div className="slide personal-portfolio-slider slider-paralax slider-style-3 d-flex align-items-center justify-content-center bg_image bg_image--25">

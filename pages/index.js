@@ -518,7 +518,7 @@ export default function Home() {
       {/* End Popup Menu Area  */}
       {/* Start Slider Area */}
       <Script
-        src="https://create-chatbots-umber.vercel.app/chatbot.js"
+        src="https://chatdesk.ailabss.com/chatbot.js"
         strategy="afterInteractive"
       ></Script>
       <div id="home" className="fix">

@@ -38,7 +38,7 @@ export default function Home() {
   useEffect(() => {
     // Set your global variable here
     window.chatbotConfig = {
-      chatbotId: 'clsnc6yho000aumc7dndlj9dw',
+      chatbotId: 'clsssy98q000318plzm9uxc3y',
     }
   }, [])
 

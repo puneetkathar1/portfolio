@@ -1195,6 +1195,45 @@ export default function Home() {
                         <a>
                           <img
                             height={535}
+                            src="/tallyfy.png"
+                            alt="Web Dev Puneet Kathar"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                    <div className="content">
+                      <div className="inner">
+                        <div className="portfolio_heading">
+                          <div className="category_list">
+                            <a>Tallyfy Clone - Workflow management</a>
+                          </div>
+                          <h4 className="title">
+                            <a>Tallyfy Clone - Workflow management</a>
+                          </h4>
+                        </div>
+                        <div className="portfolio_hover">
+                          <p>
+                            Tallyfy clone SaaS for enterprise task, template, and procedure workflow management.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <a
+                      href="https://youtu.be/0n519-M4fOI"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="transparent_link"
+                    />
+                  </div>
+                </div>
+
+                <div className="col-lg-4 col-md-6 col-sm-6 col-12">
+                  <div className="im_portfolio text-center mt--40">
+                    <div className="thumbnail_inner">
+                      <div className="thumbnail">
+                        <a>
+                          <img
+                            height={535}
                             src="/stt.png"
                             alt="Web Dev Puneet Kathar"
                           />
@@ -1292,22 +1331,22 @@ export default function Home() {
                       <div className="inner">
                         <div className="portfolio_heading">
                           <div className="category_list">
-                            <a>QIQO Chat with your Documents</a>
+                            <a>Scribeflows - Chat with your Documents</a>
                           </div>
                           <h4 className="title">
-                            <a>Chat with your documents</a>
+                            <a>Scribeflows - Chat with your documents</a>
                           </h4>
                         </div>
                         <div className="portfolio_hover">
                           <p>
-                            Filegpt.app clone for chatting with your uploaded
-                            documents.
+                            Scribeflows.com clone for chatting with your
+                            uploaded documents.
                           </p>
                         </div>
                       </div>
                     </div>
                     <a
-                      href="https://chatbot-ui-two-omega-67.vercel.app/"
+                      href="https://youtu.be/yhfeqBXMPxg"
                       target="_blank"
                       rel="noreferrer"
                       className="transparent_link"
